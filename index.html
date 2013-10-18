@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slideshow Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!-- JQuery on Google CDN -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+        <!-- CJ Slider plugin -->
+        <script src="javascript/cj_slideshow.js"></script>
+        
+        <!-- CJ Slider less stylesheet -->
+        <link href="less/cj_slideshow.less" type="text/css" rel="stylesheet/less"> 
+        
+        <!-- LESS on CloudFlare CDN -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js"></script>
+        
+        <!-- For code syntax in the examples -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $('#slideshow_1').slideshow();
+            });
+    
+        </script>
+        <style type="text/css">
+            table,td {}
+        </style>
+    </head>
+    <body>
+        
+            <h1>Example on how you can use the slideshow</h1>
+            <div id="slideshow_1" class="slideshow">
+                        <div class="slideshow_inner">
+                                <figure>
+                                    <img src="img/slideshow/stage_1.jpg" title="Me on stage">
+                                    <figcaption><p>Me from the stage</p> <a href="#" class="btn btn-primary">Läs mer</a></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/slideshow/stage_2.jpg" title="Moviebox Music collection">
+                                    <figcaption><p>Me and my team in the show: Moviebox Music collection</p></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/slideshow/stage_3.jpg" title="Eurovision Non-stop">
+                                    <figcaption><p>From the show Eurovision Non-stop!</p></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/slideshow/stage_4.jpg" title="ABBA Undeleted">
+                                    <figcaption><p>The final pose from the show: ABBA Undeleted</p></figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/slideshow/stage_5.jpg" title="Passion for Pop">
+                                    <figcaption><p>From the show Passion for Pop! A pop-show with songs from the 1950 till present time</p></figcaption>
+                                </figure>
+                        </div>
+            </div>
+            
+            <div class="intro">
+        <h2>Getting started</h2>
+        <p>Include <b>cj_slideshow.less, cj_slideshow.js</b>, <b>LESS</b> and <b>JQuery</b> in header. 
+            You can either download them and include them in your website or link them through
+        a CDN as in the example below.</p>
+        <pre class="prettyprint">
+&lt;!-- JQuery on Google CDN --&gt;
+&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- CJ Slider plugin --&gt;
+&lt;script src=&quot;js/cj_slideshow.js&quot;&gt;&lt;/script&gt;
+&lt;!-- CJ Slider less stylesheet --&gt;
+&lt;link href=&quot;less/cj_slideshow.less&quot; type=&quot;text/css&quot; rel=&quot;stylesheet/less&quot;&gt; 
+&lt;!-- LESS on CloudFlare CDN --&gt;
+&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js&quot;&gt;&lt;/script&gt;
+        </pre>
+        <p>Javascript:</p>
+        <pre class="prettyprint">
+$(document).ready(function(){
+    'use strict'
+    $('#slideshow_1').slideshow();
+});
+        </pre>
+        <h2>Styling</h2>
+        <p>The element can be styled in different ways. In the top of the LESS stylesheet 
+        you have a couple of variables you can tweak. I you want to style it even further you can scroll down
+        the LESS file customize.
+        <pre class="prettyprint">
+@slideshow_width:400px; //Width of the slideshow
+@slideshow_height:300px; //Height of the slideshow
+@slideshow_caption_height: 120px; //Height of the black caption-plane
+@slideshow_caption_bottom_space: 30px; //How far the caption-plane is from the bottom
+@slideshow_caption_opacity: 0.7; //Opacity of the caption-plane
+@slideshow_margin: 10px; //The margins of the slideshow
+        </pre>
+        
+        <h2>Optional parameters</h2>
+                <p>You can pass in an object as a parameter in the plugin with different settings that affect
+                the behaviour of the slideshow. Every setting has a default value and is optional.</p>
+                <table border=1>
+            <tr><th>Name</th><th>Default value</th><th>Description</th></tr>
+            <tr><td>width</td><td>400</td><td>The height for the slideshow in pixels</td></tr>
+            <tr><td>height</td><td>300</td><td>The width for the slideshow in pixels</td></tr>
+            <tr><td>interval</td><td>3000</td><td>Interval between transtitions in milliseconds</td></tr>
+            <tr><td>speed</td><td>1000</td><td>Speed of the fade-out effect in milliseconds</td></tr>
+            <tr><td>loop</td><td>true</td><td>True or false, If true, the slideshow will loop after last slide.</td></tr>
+            <tr><td>startIndex</td><td>0</td><td>0-based index of the first frame in the slideshow</td></tr>
+            <tr><td>elements</td><td>figure</td><td>The element to slide</td></tr>
+            
+        </table>
+        </div>
+    </body>
+</html>
